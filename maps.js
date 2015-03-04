@@ -1,6 +1,6 @@
 			//Width and height
-			var w = 918;
-			var h = 800;
+			var w = 600;
+			var h = 500;
 
 
             var projection = d3.geo.mercator()
