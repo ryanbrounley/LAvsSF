@@ -1,7 +1,11 @@
-.tooltip {
-  position: absolute;
-  width: 200px;
-  height: 28px;
-  pointer-events: none;
-  font-weight: bold;
+div.tooltip {
+  position: absolute;	
+  text-align: left;	
+  width: 100px;	
+  height: 40px;		
+  padding: 2px;	
+  font: 12px sans-serif bold;	
+  background: rgba(255,255,255,.90);
+  border: 1px solid #999;
+  border-radius: 3px;
 }
