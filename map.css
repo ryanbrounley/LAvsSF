@@ -1,61 +1,82 @@
-body{
-    background-color: #edf8fb;
-}
-
-h1{
-    color: #333333;
-    font-family:  Copperplate Gothic Light, sans-serif;
-}
-
-legend{
-    position: relative;
-}
-
-
-div.tooltip {
+/*div.tooltip {
   position: absolute;	
   text-align: left;	
-  width: 200px;	
-  height: 85px;		
+  width: 140px;	
+  height: 60px;		
   padding: 2px;	
-  font: 16px sans-serif bold;	
+  font: 12px sans-serif bold;	
   background: rgba(255,255,255,.90);
   border: 1px solid #999;
   border-radius: 3px;
+}*/
+
+head {
+    background: #edf8fb;
 }
 
-path .active {
-    fill: orange;
+body {
+    background: #edf8fb;
+}
+
+div.tooltip {
+    position: absolute;
+    width: 200;
+    height: 200;
+    padding: 10px;
+    background-color: #E5E5E5;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    border-radius: 10px;
+    pointer-events: none;
+}
+
+h1 { 
+    text-align: center;
+    /*font-family: "Goudy Old Style" serif;*/
+    font-family: 'Goudy Old Style', Garamond, 'Big Caslon', 'Times New Roman', serif;
 }
 
 .PopButton {
-  position: relative;
-  -webkit-border-radius: 24;
-  -moz-border-radius: 24;
-  border-radius: 24px;
-  font-family: Arial;
-  color: #ffffff;
-  font-size: 20px;
-  background: #6baed6;
-  padding: 10px 20px 10px 20px;
-  text-decoration: none;
+-moz-box-shadow: 0px 0px 0px 2px #3182bd;
+	-webkit-box-shadow: 0px 0px 0px 2px #3182bd;
+	box-shadow: 0px 0px 0px 2px #3182bd;
+	background-color:#6baed6;
+	-moz-border-radius:10px;
+	-webkit-border-radius:10px;
+	border-radius:10px;
+	border:1px solid #4e6096;
+	display:inline-block;
+	cursor:pointer;
+	color:#ffffff;
+	font-family:arial;
+	font-size:19px;
+	padding:7px 19px;
+	text-decoration:none;
+	text-shadow:0px 1px 0px #283966;
 }
 
 .PopButton:hover {
-  background: #08519c;
+  background-color: #08519c;
   text-decoration: none;
 }
 
 .HouseButton {
-  -webkit-border-radius: 24;
-  -moz-border-radius: 24;
-  border-radius: 24px;
-  font-family: Arial;
-  color: #ffffff;
-  font-size: 20px;
-  background: #756bb1;
-  padding: 10px 20px 10px 20px;
-  text-decoration: none;
+	-moz-box-shadow: 0px 0px 0px 2px #756bb1;
+	-webkit-box-shadow: 0px 0px 0px 2px #756bb1;
+	box-shadow: 0px 0px 0px 2px #756bb1;
+	background-color:#9e9ac8;
+	-moz-border-radius:10px;
+	-webkit-border-radius:10px;
+	border-radius:10px;
+	border:1px solid #4e6096;
+	display:inline-block;
+	cursor:pointer;
+	color:#ffffff;
+	font-family:arial;
+	font-size:19px;
+	padding:7px 19px;
+	text-decoration:none;
+	text-shadow:0px 1px 0px #283966;
 }
 
 .HouseButton:hover {
@@ -64,15 +85,22 @@ path .active {
 }
 
 .IncomeButton {
-  -webkit-border-radius: 24;
-  -moz-border-radius: 24;
-  border-radius: 24px;
-  font-family: Arial;
-  color: #ffffff;
-  font-size: 20px;
-  background: rgb(49,163,84);
-  padding: 10px 20px 10px 20px;
-  text-decoration: none;
+	-moz-box-shadow: 0px 0px 0px 2px rgb(49,163,84);
+	-webkit-box-shadow: 0px 0px 0px 2px rgb(49,163,84);
+	box-shadow: 0px 0px 0px 2px rgb(49,163,84);
+	background-color:rgb(116,196,118);
+	-moz-border-radius:10px;
+	-webkit-border-radius:10px;
+	border-radius:10px;
+	border:1px solid #4e6096;
+	display:inline-block;
+	cursor:pointer;
+	color:#ffffff;
+	font-family:arial;
+	font-size:19px;
+	padding:7px 19px;
+	text-decoration:none;
+	text-shadow:0px 1px 0px #283966;
 }
 
 .IncomeButton:hover {
@@ -81,15 +109,22 @@ path .active {
 }
 
 .EmploymentButton {
-  -webkit-border-radius: 24;
-  -moz-border-radius: 24;
-  border-radius: 24px;
-  font-family: Arial;
-  color: #ffffff;
-  font-size: 20px;
-  background: #c51b8a;
-  padding: 10px 20px 10px 20px;
-  text-decoration: none;
+	-moz-box-shadow: 0px 0px 0px 2px #c51b8a;
+	-webkit-box-shadow: 0px 0px 0px 2px #c51b8a;
+	box-shadow: 0px 0px 0px 2px #c51b8a;
+	background-color:#f768a1;
+	-moz-border-radius:10px;
+	-webkit-border-radius:10px;
+	border-radius:10px;
+	border:1px solid #4e6096;
+	display:inline-block;
+	cursor:pointer;
+	color:#ffffff;
+	font-family:arial;
+	font-size:19px;
+	padding:7px 19px;
+	text-decoration:none;
+	text-shadow:0px 1px 0px #283966;
 }
 
 .EmploymentButton:hover {
@@ -98,18 +133,56 @@ path .active {
 }
 
 .PovertyButton {
-  -webkit-border-radius: 24;
-  -moz-border-radius: 24;
-  border-radius: 24px;
-  font-family: Arial;
-  color: #ffffff;
-  font-size: 20px;
-  background: #de2d26;
-  padding: 10px 20px 10px 20px;
-  text-decoration: none;
+	-moz-box-shadow: 0px 0px 0px 2px #de2d26;
+	-webkit-box-shadow: 0px 0px 0px 2px #de2d26;
+	box-shadow: 0px 0px 0px 2px #de2d26;
+	background-color:#fb6a4a;
+	-moz-border-radius:10px;
+	-webkit-border-radius:10px;
+	border-radius:10px;
+	border:1px solid #4e6096;
+	display:inline-block;
+	cursor:pointer;
+	color:#ffffff;
+	font-family:arial;
+	font-size:19px;
+	padding:7px 19px;
+	text-decoration:none;
+	text-shadow:0px 1px 0px #283966;
 }
 
 .PovertyButton:hover {
   background: #a50f15;
   text-decoration: none;
+}
+
+path .active {
+    fill: orange;
+}
+
+
+.myButton {
+	-moz-box-shadow: 0px 0px 0px 2px #9fb4f2;
+	-webkit-box-shadow: 0px 0px 0px 2px #9fb4f2;
+	box-shadow: 0px 0px 0px 2px #9fb4f2;
+	background-color:#7892c2;
+	-moz-border-radius:10px;
+	-webkit-border-radius:10px;
+	border-radius:10px;
+	border:1px solid #4e6096;
+	display:inline-block;
+	cursor:pointer;
+	color:#ffffff;
+	font-family:arial;
+	font-size:19px;
+	padding:7px 19px;
+	text-decoration:none;
+	text-shadow:0px 1px 0px #283966;
+}
+.myButton:hover {
+	background-color:#476e9e;
+}
+.myButton:active {
+	position:relative;
+	top:1px;
 }

@@ -90,20 +90,24 @@ svg.append("rect")
     .attr("class", "background")
     .attr("width", w)
     .attr("height", h)
-  //  .style("stroke", "black")
-  //  .style("stroke-width", 5)
     .style("fill", "#edf8fb")
     .on("click", SFclicked);
 
 var g = svg.append("g");
 
+//legend code based loosely on day/hour heatmap link below
+//http://bl.ocks.org/tjdecke/5558084
+
+//legend creation attached to the svg
 var legend = svg.selectAll(".legend")
     .data(colorScale.domain(), function(d) { return d; })
     .enter()
     .append("g")
     .attr("class", "legend");
 
+//the appending of the legend by color
  legend.append("rect")
+        //sets the location and width of each colored rectangles and adds the iteratively
         .attr("x", function(d,i){ return 250 + (200 * i);})
         .attr("y", h-60)
         .attr("width", 200)
@@ -112,6 +116,7 @@ var legend = svg.selectAll(".legend")
         .style("stroke", "black")
         .style("stroke-width", "3px");  
 
+//appends the text in the legend color boxes
  legend.append("text")
         .attr("x", function(d,i){ return 260 + (200 * i);})
         .attr("y", h-40)
@@ -221,6 +226,7 @@ d3.json("LACountyTracts.geojson", function(json) {
 
 
 // Set up left scale
+//     3 lines and a piece of text above
 svg.append("line")
 	.attr("id", "leftLength")
 	.attr("x1", 25)
@@ -250,6 +256,7 @@ svg.append("text")
 	.text("1 mi")
 	
 // Set up right scale
+//    3 lines and a piece of text above
 svg.append("line")
 	.attr("id", "rightLength")
 	.attr("class", "rightScale")
@@ -382,6 +389,7 @@ d3.csv("SFData.csv", function(data) {
 
 function Population() {
 	
+    //overrides previous legend with population one
     legend.append("rect")
         .attr("x", function(d,i){ return 250+ (200 * i);})
         .attr("y", h-60)
@@ -390,7 +398,7 @@ function Population() {
         .attr("fill", function(d, i){ return poparray[i];})
         .style("stroke", "black")
         .style("stroke-width", "3px");   
-    
+    //overrides previous legend with text
     legend.append("text")
             .attr("x", function(d,i){ return 260 + (200 * i);})
             .attr("y", h-40)
@@ -419,7 +427,7 @@ function Population() {
                 
 function Income() {
 	
-    
+   //overrides previous legend with income legend
    legend.append("rect")
         .attr("x", function(d,i){ return 250+(200 * i);})
         .attr("y", h-60)
@@ -429,6 +437,7 @@ function Income() {
         .style("stroke", "black")
         .style("stroke-width", "3px");   
     
+    //overrides previous legend text with income text
     legend.append("text")
             .attr("x", function(d,i){ return 260 + (200 * i);})
             .attr("y", h-40)
@@ -452,9 +461,6 @@ function Income() {
 		            return "#ccc";
 		        }
              });
-    
-            
-    
 }
                 
 function Prices() {
@@ -464,6 +470,7 @@ function Prices() {
                 maxPrice
     ]);
     
+    //overrides previous legend with housingprices legend
     legend.append("rect")
         .attr("x", function(d,i){ return 250+(200 * i);})
         .attr("y", h-60)
@@ -473,6 +480,7 @@ function Prices() {
         .style("stroke", "black")
         .style("stroke-width", "3px");   
     
+    //overrides previous legend text with housingprices legend
     legend.append("text")
             .attr("x", function(d,i){ return 260 + (200 * i);})
             .attr("y", h-40)
@@ -507,6 +515,7 @@ function Employment() {
                 maxEmployment
     ]);
     
+    //overrides previous legend with employment legend
     legend.append("rect")
         .attr("x", function(d,i){ return 250+(200 * i);})
         .attr("y", h-60)
@@ -516,6 +525,7 @@ function Employment() {
         .style("stroke", "black")
         .style("stroke-width", "3px");  
     
+    //overrides previous legend text 
     legend.append("text")
         .attr("x", function(d,i){ return 260 + (200 * i);})
         .attr("y", h-40)
@@ -548,6 +558,7 @@ function Poverty() {
                 18
     ]);
     
+    //overrides previous legend with poverty legend
     legend.append("rect")
         .attr("x", function(d,i){ return 250+(200 * i);})
         .attr("y", h-60)
@@ -557,6 +568,7 @@ function Poverty() {
         .style("stroke", "black")
         .style("stroke-width", "3px"); 
     
+    //overrides previous legend text with poverty legend
     legend.append("text")
         .attr("x", function(d,i){ return 260 + (200 * i);})
         .attr("y", h-40)
@@ -594,25 +606,29 @@ function Poverty() {
   function SFclicked(d) {
   var x, y, k;
 
+  // Zoom into SF
   if (d && centered !== d) {
     var centroid = SFpath.centroid(d);
     x = centroid[0];
     y = centroid[1];
     k = 4;
     centered = d;
-    
+    // Change SF scale
     svg.select("#leftText")
     	.text("2 mi")
+    // Hide SF scale
     svg.selectAll(".rightScale")
     	.attr("opacity", 0)
-  } else {
+  } 
+  // Zoom out of SF
+  else {
     x = w / 2;
     y = h / 2;
     k = 1;
     centered = null;
-    
     svg.select("#leftText")
     	.text("1 mi")
+    // Reshow LA scale
     svg.selectAll(".rightScale")
     .attr("opacity", 100)
   }
@@ -628,7 +644,8 @@ function Poverty() {
 
  function LAclicked(d) {
   var x, y, k;
-
+    
+  // Zoom into LA     
   if (d && centered !== d) {
     var centroid = LApath.centroid(d);
     x = centroid[0];
@@ -640,7 +657,9 @@ function Poverty() {
     	.text("3 mi")
     svg.selectAll(".rightScale")
     	.attr("opacity", 0)
-  } else {
+  } 
+  // Zoom out from LA
+  else {
     x = w / 2;
     y = h / 2;
     k = 1;
