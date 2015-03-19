@@ -1,11 +1,115 @@
+body{
+    background-color: #edf8fb;
+}
+
+h1{
+    color: #333333;
+    font-family:  Copperplate Gothic Light, sans-serif;
+}
+
+legend{
+    position: relative;
+}
+
+
 div.tooltip {
   position: absolute;	
   text-align: left;	
-  width: 100px;	
-  height: 40px;		
+  width: 200px;	
+  height: 85px;		
   padding: 2px;	
-  font: 12px sans-serif bold;	
+  font: 16px sans-serif bold;	
   background: rgba(255,255,255,.90);
   border: 1px solid #999;
   border-radius: 3px;
+}
+
+path .active {
+    fill: orange;
+}
+
+.PopButton {
+  position: relative;
+  -webkit-border-radius: 24;
+  -moz-border-radius: 24;
+  border-radius: 24px;
+  font-family: Arial;
+  color: #ffffff;
+  font-size: 20px;
+  background: #6baed6;
+  padding: 10px 20px 10px 20px;
+  text-decoration: none;
+}
+
+.PopButton:hover {
+  background: #08519c;
+  text-decoration: none;
+}
+
+.HouseButton {
+  -webkit-border-radius: 24;
+  -moz-border-radius: 24;
+  border-radius: 24px;
+  font-family: Arial;
+  color: #ffffff;
+  font-size: 20px;
+  background: #756bb1;
+  padding: 10px 20px 10px 20px;
+  text-decoration: none;
+}
+
+.HouseButton:hover {
+  background: #54278f;
+  text-decoration: none;
+}
+
+.IncomeButton {
+  -webkit-border-radius: 24;
+  -moz-border-radius: 24;
+  border-radius: 24px;
+  font-family: Arial;
+  color: #ffffff;
+  font-size: 20px;
+  background: rgb(49,163,84);
+  padding: 10px 20px 10px 20px;
+  text-decoration: none;
+}
+
+.IncomeButton:hover {
+  background: rgb(0,109,44);
+  text-decoration: none;
+}
+
+.EmploymentButton {
+  -webkit-border-radius: 24;
+  -moz-border-radius: 24;
+  border-radius: 24px;
+  font-family: Arial;
+  color: #ffffff;
+  font-size: 20px;
+  background: #c51b8a;
+  padding: 10px 20px 10px 20px;
+  text-decoration: none;
+}
+
+.EmploymentButton:hover {
+  background: #7a0177;
+  text-decoration: none;
+}
+
+.PovertyButton {
+  -webkit-border-radius: 24;
+  -moz-border-radius: 24;
+  border-radius: 24px;
+  font-family: Arial;
+  color: #ffffff;
+  font-size: 20px;
+  background: #de2d26;
+  padding: 10px 20px 10px 20px;
+  text-decoration: none;
+}
+
+.PovertyButton:hover {
+  background: #a50f15;
+  text-decoration: none;
 }
